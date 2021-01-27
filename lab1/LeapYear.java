@@ -1,11 +1,18 @@
-/** Class that determines whether or not a year is a leap year.
- *  @author YOUR NAME HERE
+/**
+ * Class that determines whether or not a year is a leap year.
+ * @author ztt
  */
 public class LeapYear {
-
-    /** Calls isLeapYear to print correct statement.
-     *  @param  year to be analyzed
-     */
+    public static boolean isLeapYear(int year){
+        if(year % 400 ==0){
+            return true;
+        }
+        if(year%4==0 && year%100!=0){
+            return true;
+        }
+        return false;
+    }
+    /** Calls isLeapYear to print correct statement. */
     private static void checkLeapYear(int year) {
         if (isLeapYear(year)) {
             System.out.printf("%d is a leap year.\n", year);
@@ -15,10 +22,10 @@ public class LeapYear {
     }
 
     /** Must be provided an integer as a command line argument ARGS. */
-    public static void main(String[] args) {
+    public static void main(String[] args) {  // args是一个字符串数组，每个元素都是字符串
         if (args.length < 1) {
             System.out.println("Please enter command line arguments.");
-            System.out.println("e.g. java Year 2000");
+            System.out.println("e.g. java LeapYear 2000");
         }
         for (int i = 0; i < args.length; i++) {
             try {
@@ -30,4 +37,3 @@ public class LeapYear {
         }
     }
 }
-
